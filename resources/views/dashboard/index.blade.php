@@ -79,7 +79,7 @@
                             @foreach ($destinations as $destination)
                             <tr>
                                 <td><?= $i; ?></td>
-                                <td><a class="a-user" href="/participants/{{$destination->id}}">{{ $destination->name }}</a></td>
+                                <td><a class="a-user" href="/{{Request::segment(1)}}/{{$destination->id}}">{{ $destination->name }}</a></td>
                                 <td>{{ $destination->category->name }}</td>
                                 <td>{{ Carbon\Carbon::parse($destination->updated_at)->diffForHumans() }}</td>
                                 <td>

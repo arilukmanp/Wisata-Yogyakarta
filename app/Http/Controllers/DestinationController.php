@@ -48,6 +48,11 @@ class DestinationController extends Controller
 
     public function store(Request $request)
     {
+        // $this->validate($request, [
+        //     'category_id'    => 'required'
+        // ]);
+
+
         $url = Route::current()->uri;
 
 
@@ -68,7 +73,7 @@ class DestinationController extends Controller
         }
 
 
-        $tes = Destination::create([
+        Destination::create([
             'name'           => $request->name,
             'district_id'    => $district,
             'category_id'    => $request->category,
@@ -81,27 +86,46 @@ class DestinationController extends Controller
             'business_hours' => $request->business_hours,
             'address'        => $request->address
         ]);
+
+        return redirect($url)->with('success', 'Berhasil Menambahkan Data');
     }
 
     public function show($id)
     {
-        
+        $data = Destination::findOrFail($id);
+        return view('dashboard.single', ['destination' => $data]);
     }
 
     public function edit($id)
     {
-        
+        $destinations = Destination::findOrFail($id);
+        $categories   = Category::all();
+        return view('dashboard.edit', ['destination' => $destinations, 'categories' => $categories]);
     }
 
     public function update(Request $request, $id)
     {
-        
+        $url = Route::current()->uri;
+
+        Destination::find($id)->update([
+            'name'           => $request->name,
+            'category_id'    => $request->category,
+            'cost'           => $request->cost,
+            'popularity'     => $request->popularity,
+            'visitor'        => $request->visitor,
+            'facilities'     => $request->facilities,
+            'cleanliness'    => $request->cleanliness,
+            'accessibility'  => $request->accessibility,
+            'business_hours' => $request->business_hours,
+            'address'        => $request->address
+        ]);
+
+        return redirect($url)->with('success', 'Berhasil Menambahkan Data');
     }
 
     public function destroy($id)
     {
-        $data = Destination::find($id);
-        $data->delete();
+        Destination::find($id)->delete();
 
         return back();
     }

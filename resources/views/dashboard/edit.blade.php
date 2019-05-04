@@ -1,19 +1,58 @@
 @extends('layouts.master')
 
-@section('title', 'Edit Participant')
+
+@if(Request::segment(1) == 'bantul')
+    @section('title', 'Edit Destinasi Wisata Kab. Bantul')
+@endif
+
+@if(Request::segment(1) == 'gunungkidul')
+    @section('title', 'Edit Destinasi Wisata Kab. Gunungkidul')
+@endif
+
+@if(Request::segment(1) == 'kulonprogo')
+    @section('title', 'Edit Destinasi Wisata Kab. Kulonprogo')
+@endif
+
+@if(Request::segment(1) == 'sleman')
+    @section('title', 'Edit Destinasi Wisata Kab. Sleman')
+@endif
+
+@if(Request::segment(1) == 'yogyakarta')
+    @section('title', 'Edit Destinasi Wisata Kota Yogyakarta')
+@endif
+
 
 @section('content')
 <div class="block-content">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="block-header bttl">
-				<h3>Edit Participant</h3>
+				@if(Request::segment(1) == 'bantul')
+					<h3>Edit Data Destinasi Wisata Kab. Bantul</h3>
+				@endif
+				
+				@if(Request::segment(1) == 'gunungkidul')
+					<h3>Edit Data Destinasi Wisata Kab. Gunungkidul</h3>
+				@endif
+				
+				@if(Request::segment(1) == 'kulonprogo')
+					<h3>Edit Data Destinasi Wisata Kab. Kulonprogo</h3>
+				@endif
+				
+				@if(Request::segment(1) == 'sleman')
+					<h3>Edit Data Destinasi Wisata Kab. Sleman</h3>
+				@endif
+				
+				@if(Request::segment(1) == 'yogyakarta')
+					<h3>Edit Data Destinasi Wisata Kota Yogyakarta</h3>
+				@endif
 			</div>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-12">
-			<form class="form-horizontal edt" action="/participants/{{ $participant->id }}" method="POST" enctype="multipart/form-data">
+			<form class="form-horizontal edt" action="/{{Request::segment(1)}}/{{$destination->id}}" method="POST" enctype="multipart/form-data">
+			
 				@if(count($errors) > 0)
 					@foreach ($errors->all() as $error)
 						<div class="col-md-12">
@@ -24,61 +63,80 @@
 						</div>
 					@endforeach
 				@endif
+
 				<div class="col-md-6">
 					<div class="form-group">
-						<label for="name">Fullname</label>
-						<input type="text" class="form-control" id="name" name="name" value="{{ $participant->profile->name }}" required autocomplete="off">
-					</div>
-                </div>
-				<div class="col-md-6">
-					<div class="form-group">
-						<label for="email">Email Address</label>
-						<input type="email" class="form-control" id="email" name="email" value="{{ $participant->email }}" required autocomplete="off">
+						<label for="name">Nama Tempat</label>
+						<input type="text" class="form-control" id="name" name="name" value="{{ $destination->name }}" required autocomplete="off">
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="form-group">
-						<label for="place_of_birth">Place of Birth</label>
-						<input type="text" class="form-control" id="place_of_birth" name="place_of_birth" value="{{ $participant->profile->place_of_birth }}" autocomplete="off">
+						<label for="category">Kategori</label>
+						<select class="form-control" id="category" name="category">
+							<option>-- Pilih Kategori --</option>
+							@foreach ($categories as $category)
+								<option value="{{$category->id}}">{{$category->name}}</option>
+							@endforeach
+						</select>
 					</div>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-4">
 					<div class="form-group">
-						<label for="date_of_birth">Date of Birth</label>
-						<input type="date" class="form-control" id="date_of_birth" name="date_of_birth" value="{{ $participant->profile->date_of_birth }}" autocomplete="off">
+						<label for="popularity">Popularitas Tempat</label>
+						<input type="number" class="form-control" id="popularity" name="popularity" value="{{ $destination->popularity }}" required autocomplete="off">
 					</div>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-4">
 					<div class="form-group">
-						<label for="phone">Phone Number</label>
-						<input type="number" class="form-control" id="phone" name="phone" value="{{ $participant->profile->phone }}" autocomplete="off">
+						<label for="cost">Harga Tiket</label>
+						<input type="number" class="form-control" id="cost" name="cost" value="{{ $destination->cost }}" required autocomplete="off">
 					</div>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-4">
 					<div class="form-group">
-						<label for="photo">Photo</label>
-						<div class="input-group">
-							<input type="text" class="form-control" name="photo_old" value="{{ $participant->profile->photo }}" readonly>
-							<label class="input-group-btn">
-								<span class="btn btn-danger">
-									<span class="image-preview-input-title">Select Photo</span>
-									<input type="file" accept="image/png, image/jpeg, image/jpg" id="photo" name="photo" style="display: none;">
-								</span>
-							</label>
-						</div>
+						<label for="business_hours">Jam Buka</label>
+						<input type="text" class="form-control" id="business_hours" name="business_hours" value="{{ $destination->business_hours }}" required autocomplete="off">
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="visitor">Rata-Rata Pengunjung Perhari</label>
+						<input type="number" class="form-control" id="visitor" name="visitor" value="{{ $destination->visitor }}" required autocomplete="off">
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="facilities">Fasilitas</label>
+						<input type="number" class="form-control" id="facilities" name="facilities" value="{{ $destination->facilities }}" required autocomplete="off">
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label for="cleanliness">Kebersihan</label>
+						<input type="number" class="form-control" id="cleanliness" name="cleanliness" value="{{ $destination->cleanliness }}" required autocomplete="off">
+					</div>
+				</div>
+				<div class="col-md-4">
+						<div class="form-group" style="border-bottom: none">
+						<label for="accessibility">Kemudahan Akses Tempat</label>
+						<input type="number" class="form-control" id="accessibility" name="accessibility" value="{{ $destination->accessibility }}" required autocomplete="off">
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="form-group" style="border-bottom: none">
+						<label for="address">Alamat</label>
+						<textarea class="form-control" id="address" name="address" rows="1" required>{{ $destination->address }}</textarea>
 					</div>
 				</div>
 				<div class="col-md-12">
-					<div class="form-group">
-						<label>Address</label>
-						<textarea class="form-control" rows="3" name="address">{{ $participant->profile->address }}</textarea>
-					</div>
+					<div class="form-group"></div>
 				</div>
 				<div class="col-md-12">
 					<div class="form-btn">
-						<a href="/participants/{{ $participant->id }}" class="btn btn-danger"><i class="fa fa-times"></i> &nbsp; Batal</a>
-						<button type="submit" class="btn btn-info pull-right" value="edit" name="submit"><i class="fa fa-check"></i> &nbsp; Save</button>
-						{{ csrf_field() }}
+						<a href="{{URL::previous()}}" class="btn btn-danger"><i class="fa fa-times"></i> &nbsp; Batal</a>
+						<button type="submit" class="btn btn-info pull-right" value="upload" name="submit"><i class="fa fa-check"></i> &nbsp; Simpan</button>
+						@csrf
 						<input type="hidden" name="_method" value="PUT">
 					</div>
                 </div>
@@ -86,48 +144,4 @@
 		</div>
 	</div>
 </div>
-@endsection
-
-@section('script')
-	<script type="text/javascript">
-		$(document).on('click', '#close-preview', function(){ 
-			$('.image-preview').popover('hide');
-		});
-
-		$(function() {
-			var closebtn = $('<button/>', {
-				type:"button",
-				text: 'x',
-				id: 'close-preview',
-				style: 'font-size: initial;',
-			});
-			closebtn.attr("class","close pull-right");
-
-
-			$('.image-preview-clear').click(function(){
-				$('.image-preview').attr("data-content","").popover('hide');
-				$('.image-preview-filename').val("");
-				$('.image-preview-clear').hide();
-				$('.image-preview-input input:file').val("");
-				$(".image-preview-input-title").text("Browse"); 
-			}); 
-
-			$(".image-preview-input input:file").change(function (){     
-				var img = $('<img/>', {
-					id: 'dynamic',
-					width:250,
-					height:200
-				});      
-				var file = this.files[0];
-				var reader = new FileReader();
-
-				reader.onload = function (e) {
-					$(".image-preview-input-title").text("Ganti");
-					$(".image-preview-clear").show();
-					$(".image-preview-filename").val(file.name);
-				}        
-				reader.readAsDataURL(file);
-			});  
-		});
-	</script>
 @endsection
