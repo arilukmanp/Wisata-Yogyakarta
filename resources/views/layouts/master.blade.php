@@ -108,8 +108,8 @@
 									<span>Referensi</span>
 								</a>
 								<ul class="list-unstyled">
-									<a class="@if(Request::segment(1) == 'referensi') active @endif" @if(Request::segment(1) == 'referensi' && Request::segment(2) == 'fuzzy') style="color:#ED1262" @endif href="/referensi/fuzzy">Fuzzy System</a>
-									<a @if(Request::segment(1) == 'referensi' && Request::segment(2) == 'kategori') style="color:#ED1262" @endif href="/referensi/kategori">Kategori</a>
+									<a class="@if(Request::segment(1) == 'reference') active @endif" @if(Request::segment(1) == 'reference' && Request::segment(2) == 'fuzzy') style="color: #ffb540" @endif href="/reference/fuzzy">Fuzzy System</a>
+									<a @if(Request::segment(1) == 'reference' && Request::segment(2) == 'category') style="color: #ffb540" @endif href="/reference/category">Kategori</a>
 								</ul>
 							</li>
 						</ul>
@@ -164,8 +164,8 @@
 								<span>Referensi</span>
 							</a>
 							<ul class="list-unstyled">
-								<a href="/referensi/fuzzy">Fuzzy System</a>
-								<a href="/referensi/kategori">Kategori</a>
+								<a href="/reference/fuzzy">Fuzzy System</a>
+								<a href="/reference/category">Kategori</a>
 							</ul>
 						</li>
 						<li>

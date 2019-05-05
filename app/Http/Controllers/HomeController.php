@@ -17,7 +17,7 @@ class HomeController extends Controller
         $sleman      = Destination::where('district_id', 4)->count();
         $yogyakarta  = Destination::where('district_id', 5)->count();
 
-        return view('dashboard.home', [
+        return view('dashboard.home.index', [
             'hits' => $hits,
             'bantul'      => $bantul,
             'gunungkidul' => $gunungkidul,

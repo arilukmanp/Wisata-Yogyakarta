@@ -84,7 +84,7 @@
                                 <td>{{ Carbon\Carbon::parse($destination->updated_at)->diffForHumans() }}</td>
                                 <td>
                                     <form action="{{URL::current().'/'.$destination->id}}" method="POST">
-                                        <button type="submit" class="btn btn_red btn-xs" name="submit"" value="delete" data-toggle="tooltip" title="Delete" onClick="return dodelete();"><i class="fas fa-trash"></i> &nbsp; Delete</button>
+                                        <button type="submit" class="btn btn_red btn-xs" name="submit" value="delete" data-toggle="tooltip" title="Delete" onClick="return dodelete();"><i class="fas fa-trash"></i> &nbsp; Hapus</button>
                                         {{ csrf_field() }}
                                         <input type="hidden" name="_method" value="DELETE">
                                     </form>

@@ -593,6 +593,11 @@ svg:not(:root) { height: 100% !important; }
 	color: #f39c12;
 }
 
-.a-user:hover {
+.a-user:hover, .a-user:focus, .a-user:active {
 	color: #df8a03;
+}
+
+.parameter-text {
+	color: #b3b3b3;
+	font-size: 12px;
 }

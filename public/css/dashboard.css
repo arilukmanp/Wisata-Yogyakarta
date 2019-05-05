@@ -355,7 +355,7 @@ body.fixed-left .side-menu.left {
 }
 #sidebar-menu > ul > li > a.active {
 	background: #f5fbf4 !important;
-	border-left: 3px solid #ffb540;
+	border-left: 3px solid #ffffff;
 	color: #ffb540 !important;
 	border-radius: 100px 0 0 100px;
 }

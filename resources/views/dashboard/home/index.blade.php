@@ -17,7 +17,7 @@
                     <div class="col-md-12">
                         <div class="widget">
                             <div class="mini-stats">
-                                <h4 style="text-align:left;">Welcome, {{ Auth::user()->name }}</h4>
+                                <h4 style="text-align:left;">Selamat datang, {{ Auth::user()->name }}</h4>
                             </div>
                         </div>
                     </div>

@@ -68,6 +68,22 @@ Route::group(['middleware' => 'admin'], function () {
         Route::get('/{id}/edit', 'DestinationController@edit');
     });
 
-    
+    Route::group(['prefix' => 'reference/fuzzy'], function () {
+        Route::post('/', 'FuzzyController@store');
+        Route::get('/', 'FuzzyController@index');
+        Route::get('/create', 'FuzzyController@create');
+        Route::put('/{id}', 'FuzzyController@update');
+        Route::delete('/{id}', 'FuzzyController@destroy');
+        Route::get('/{id}/edit', 'FuzzyController@edit');
+    });
+
+    Route::group(['prefix' => 'reference/category'], function () {
+        Route::post('/', 'CategoryController@store');
+        Route::get('/', 'CategoryController@index');
+        Route::get('/create', 'CategoryController@create');
+        Route::put('/{id}', 'CategoryController@update');
+        Route::delete('/{id}', 'CategoryController@destroy');
+        Route::get('/{id}/edit', 'CategoryController@edit');
+    });
 
 });
