@@ -601,3 +601,14 @@ svg:not(:root) { height: 100% !important; }
 	color: #b3b3b3;
 	font-size: 12px;
 }
+
+.field-icon {
+	float: right;
+	margin-right: 8px;
+	margin-top: -39px;
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
+	font-size: 13px;
+	color: #89888d;
+}

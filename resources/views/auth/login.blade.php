@@ -8,6 +8,7 @@
 	<link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css') }}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body id="lg2">
 	<div class="container">
@@ -26,13 +27,10 @@
 				    @endif
 
 					<input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" placeholder="{{ __('Email Address') }}" required autocomplete="off">
-                    
-                    <input type="password" id="login-password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="{{ __('Password') }}" required autocomplete="off">
-                    
-                    <div class="ml-2 form-check text-left mt-4">
-						<input type="checkbox" class="form-check-input" id="tampilpswd" onclick="showPassword()">
-						<label for="tampilpswd">Show Password</label>
-                    </div>
+
+					<input id="login-password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="{{ __('Password') }}" required autocomplete="off">
+					
+					<span class="fa fa-fw fa-eye field-icon toggle-password"  onclick="showPassword()"></span>
                     
                     <div class="ml-2 form-check text-left mb-2">
                         <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>

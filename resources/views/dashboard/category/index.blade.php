@@ -18,15 +18,15 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                @if(session('success'))
-                    <div class="col-md-12">
-                        <div class="alert alert-success">
-                            {{ session('success') }}
-                            <a class="close" data-dismiss="alert" href="" aria-hidden="true">&times;</a>
-                        </div>
+            @if(session('success'))
+                <div class="col-md-12">
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                        <a class="close" data-dismiss="alert" href="" aria-hidden="true">&times;</a>
                     </div>
-                @endif
+                </div>
+            @endif
+            <div class="col-md-12">
                 <div class="panel">
                     <table class="table table-striped" id="mydata">
                         <thead>
@@ -45,7 +45,7 @@
                             <tr>
                                 <td><?= $i; ?></td>
                                 <td>{{ $category->name }}</td>
-                                <td>{{ Carbon\Carbon::parse($category->created_at)->formatLocalized('%A, %d %B %Y %H:%I:%S') . ", Pukul " . Carbon\Carbon::parse($category->created_at)->format('H:i')}}</td>
+                                <td>{{ Carbon\Carbon::parse($category->created_at)->format('d M Y') . ", Pukul " . Carbon\Carbon::parse($category->created_at)->format('H:i')}}</td>
                                 <td class="text-center">
                                     <a href="/{{Request::path()}}/{{$category->id}}/edit" class="btn btn_yellow btn-xs" data-toggle="tooltip" title="Edit"><i class="fas fa-pen"></i> &nbsp; Edit</a>
                                     <form action="{{URL::current().'/'.$category->id}}" method="POST">

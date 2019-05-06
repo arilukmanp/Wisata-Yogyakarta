@@ -60,6 +60,14 @@
             </div>
         </div>
         <div class="row">
+            @if(session('success'))
+                <div class="col-md-12">
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                        <a class="close" data-dismiss="alert" href="" aria-hidden="true">&times;</a>
+                    </div>
+                </div>
+            @endif
             <div class="col-md-12">
                 <div class="panel">
                     <table class="table table-striped" id="mydata">

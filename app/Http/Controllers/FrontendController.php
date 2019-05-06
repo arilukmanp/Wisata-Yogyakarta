@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Hit;
+use App\Models\Category;
+use App\Models\District;
+use App\Models\Destination;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -24,6 +27,8 @@ class FrontendController extends Controller
             Hit::create(['counter' => '1']);
         }
 
-        return view('welcome');
+        $category = Category::orderBy('name', 'asc')->get();
+
+        return view('frontend.index', ['categories' => $category]);
     }
 }

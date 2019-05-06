@@ -1,12 +1,3 @@
-function showPassword() {
-	var x = document.getElementById('login-password');
-	if(x.type === "password") {
-		x.type = "text";
-	} else {
-		x.type = "password";
-	}
-}
-
 $(document).ready( function () {
 	$('#mydata').DataTable();
 });
@@ -63,18 +54,15 @@ signInButton.addEventListener('click', () => {
 	container.classList.remove("right-panel-active");
 });
 
-
-
-$(".toggle-password").click(function() {
-
-	$(this).toggleClass("fa-eye fa-eye-slash");
-	var input = $($(this).attr("toggle"));
-	if (input.attr("type") == "password") {
-	  input.attr("type", "text");
+function showPassword() {
+	$(".toggle-password").toggleClass("fa-eye fa-eye-slash");
+	var x = document.getElementById('login-password');
+	if(x.type === "password") {
+		x.type = "text";
 	} else {
-	  input.attr("type", "password");
+		x.type = "password";
 	}
-  });
+}
 
 // ================== End of Login Area ===================
 
