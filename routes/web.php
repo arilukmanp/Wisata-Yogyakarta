@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'FrontendController@index');
+Route::post('/', 'FrontendController@calculate');
 
 Auth::routes();
 

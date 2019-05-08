@@ -16,14 +16,14 @@
     <div id="app" class="container">
         <div class="row">
             <form action="/" method="POST">
-                <ul class="stepper linear">
+                <ul class="stepper horizontal" style="min-height:630px">
                     <li class="step active">
                         <div class="step-title waves-effect">Kategori</div>
                         <div class="step-content">
                             @foreach ($categories as $category)
                             <p>
                                 <label>
-                                    <input type="checkbox" class="filled-in">
+                                    <input type="checkbox" class="filled-in" name="category[]" value="{{ $category->id }}">
                                     <span>{{ $category->name }}</span>
                                 </label>
                             </p>
@@ -34,15 +34,25 @@
                         </div>
                     </li>
                     <li class="step">
-                        <div class="step-title waves-effect">Harga</div>
+                        <div class="step-title waves-effect">Popularitas</div>
                         <div class="step-content">
-                            <p class="range-field">
-                                <input type="range" list="tickmarks">
-                                <datalist id="tickmarks">
-                                    <option value="0" label="0%">
-                                    <option value="50" label="50%">
-                                    <option value="100" label="100%">
-                                </datalist>
+                            <p>
+                                <label>
+                                    <input class="with-gap" name="popularity" value="cukup_terkenal" type="radio">
+                                    <span>Cukup Terkenal</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input class="with-gap" name="popularity" value="terkenal" type="radio">
+                                    <span>Terkenal</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input class="with-gap" name="popularity" value="sangat_terkenal" type="radio">
+                                    <span>Sangat Terkenal</span>
+                                </label>
                             </p>
                             <div class="step-actions">
                                 <button class="waves-effect waves-dark btn next-step">Selanjutnya</button>
@@ -50,28 +60,29 @@
                         </div>
                     </li>
                     <li class="step">
-                        <div class="step-title waves-effect">Popularitas</div>
+                        <div class="step-title waves-effect">Biaya Masuk</div>
                         <div class="step-content">
                             <p>
                                 <label>
-                                    <input class="with-gap" name="popularity" type="radio">
-                                    <span>Rendah</span>
+                                    <input class="with-gap" name="cost" value="sangat_murah" type="radio">
+                                    <span>Sangat Murah</span>
                                 </label>
                             </p>
                             <p>
                                 <label>
-                                    <input class="with-gap" name="popularity" type="radio">
+                                    <input class="with-gap" name="cost" value="murah" type="radio">
+                                    <span>Murah</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input class="with-gap" name="cost" value="sedang" type="radio">
                                     <span>Sedang</span>
                                 </label>
                             </p>
-                            <p>
-                                <label>
-                                    <input class="with-gap" name="popularity" type="radio">
-                                    <span>Tinggi</span>
-                                </label>
-                            </p>
                             <div class="step-actions">
-                                <button class="waves-effect waves-dark btn next-step">Selanjutnya</button>
+                                <button class="waves-effect waves-dark btn" type="submit">Search</button>
+                                @csrf
                             </div>
                         </div>
                     </li>
