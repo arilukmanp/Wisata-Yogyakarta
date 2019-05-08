@@ -9,29 +9,29 @@ class FuzzyController extends Controller
 {
     public function index()
     {
-        $popularity1 = Fuzzy::find(1)->get();
-        $popularity2 = Fuzzy::find(2)->get();
-        $popularity3 = Fuzzy::find(3)->get();
+        $popularity1 = Fuzzy::where('id', '1')->first();
+        $popularity2 = Fuzzy::where('id', '2')->first();
+        $popularity3 = Fuzzy::where('id', '3')->first();
 
-        $cost1 = Fuzzy::find(4)->get();
-        $cost2 = Fuzzy::find(5)->get();
-        $cost3 = Fuzzy::find(6)->get();
+        $cost1 = Fuzzy::where('id', '4')->first();
+        $cost2 = Fuzzy::where('id', '5')->first();
+        $cost3 = Fuzzy::where('id', '6')->first();
 
-        $visitor1 = Fuzzy::find(7)->get();
-        $visitor2 = Fuzzy::find(8)->get();
-        $visitor3 = Fuzzy::find(9)->get();
+        $visitor1 = Fuzzy::where('id', '7')->first();
+        $visitor2 = Fuzzy::where('id', '8')->first();
+        $visitor3 = Fuzzy::where('id', '9')->first();
 
-        $facility1 = Fuzzy::find(10)->get();
-        $facility2 = Fuzzy::find(11)->get();
-        $facility3 = Fuzzy::find(12)->get();
+        $facility1 = Fuzzy::where('id', '10')->first();
+        $facility2 = Fuzzy::where('id', '11')->first();
+        $facility3 = Fuzzy::where('id', '12')->first();
 
-        $cleanliness1 = Fuzzy::find(13)->get();
-        $cleanliness2 = Fuzzy::find(14)->get();
-        $cleanliness3 = Fuzzy::find(15)->get();
+        $cleanliness1 = Fuzzy::where('id', '13')->first();
+        $cleanliness2 = Fuzzy::where('id', '14')->first();
+        $cleanliness3 = Fuzzy::where('id', '15')->first();
 
-        $accessibility1 = Fuzzy::find(16)->get();
-        $accessibility2 = Fuzzy::find(17)->get();
-        $accessibility3 = Fuzzy::find(18)->get();
+        $accessibility1 = Fuzzy::where('id', '16')->first();
+        $accessibility2 = Fuzzy::where('id', '17')->first();
+        $accessibility3 = Fuzzy::where('id', '18')->first();
 
         return view('dashboard.fuzzy.index', [
             'popularity1' => $popularity1,
@@ -62,29 +62,29 @@ class FuzzyController extends Controller
 
     public function edit()
     {
-        $popularity1 = Fuzzy::find(1)->get();
-        $popularity2 = Fuzzy::find(2)->get();
-        $popularity3 = Fuzzy::find(3)->get();
+        $popularity1 = Fuzzy::where('id', '1')->first();
+        $popularity2 = Fuzzy::where('id', '2')->first();
+        $popularity3 = Fuzzy::where('id', '3')->first();
 
-        $cost1 = Fuzzy::find(4)->get();
-        $cost2 = Fuzzy::find(5)->get();
-        $cost3 = Fuzzy::find(6)->get();
+        $cost1 = Fuzzy::where('id', '4')->first();
+        $cost2 = Fuzzy::where('id', '5')->first();
+        $cost3 = Fuzzy::where('id', '6')->first();
 
-        $visitor1 = Fuzzy::find(7)->get();
-        $visitor2 = Fuzzy::find(8)->get();
-        $visitor3 = Fuzzy::find(9)->get();
+        $visitor1 = Fuzzy::where('id', '7')->first();
+        $visitor2 = Fuzzy::where('id', '8')->first();
+        $visitor3 = Fuzzy::where('id', '9')->first();
 
-        $facility1 = Fuzzy::find(10)->get();
-        $facility2 = Fuzzy::find(11)->get();
-        $facility3 = Fuzzy::find(12)->get();
+        $facility1 = Fuzzy::where('id', '10')->first();
+        $facility2 = Fuzzy::where('id', '11')->first();
+        $facility3 = Fuzzy::where('id', '12')->first();
 
-        $cleanliness1 = Fuzzy::find(13)->get();
-        $cleanliness2 = Fuzzy::find(14)->get();
-        $cleanliness3 = Fuzzy::find(15)->get();
+        $cleanliness1 = Fuzzy::where('id', '13')->first();
+        $cleanliness2 = Fuzzy::where('id', '14')->first();
+        $cleanliness3 = Fuzzy::where('id', '15')->first();
 
-        $accessibility1 = Fuzzy::find(16)->get();
-        $accessibility2 = Fuzzy::find(17)->get();
-        $accessibility3 = Fuzzy::find(18)->get();
+        $accessibility1 = Fuzzy::where('id', '16')->first();
+        $accessibility2 = Fuzzy::where('id', '17')->first();
+        $accessibility3 = Fuzzy::where('id', '18')->first();
 
         return view('dashboard.fuzzy.edit', [
             'popularity1' => $popularity1,

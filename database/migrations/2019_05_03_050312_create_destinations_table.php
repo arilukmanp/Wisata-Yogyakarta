@@ -21,11 +21,11 @@ class CreateDestinationsTable extends Migration
             $table->integer('district_id')->length(3)->unsigned();
             $table->integer('category_id')->length(3)->unsigned();
             $table->integer('cost')->nullable();
-            $table->integer('popularity')->nullable();
+            $table->float('popularity',  8, 1)->nullable();
             $table->integer('visitor')->nullable();
-            $table->integer('facilities')->nullable();
-            $table->integer('cleanliness')->nullable();
-            $table->integer('accessibility')->nullable();
+            $table->float('facilities',  8, 1)->nullable();
+            $table->float('cleanliness',  8, 1)->nullable();
+            $table->float('accessibility',  8, 1)->nullable();
             $table->string('business_hours')->nullable();
             $table->text('address')->nullable();
             $table->timestamps();

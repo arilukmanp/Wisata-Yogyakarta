@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
 
-        // Create EO Account
+        // Create Admin Account
         $user = new User();
         $user->name     = 'admin';
         $user->email    = 'admin@wisata.com';

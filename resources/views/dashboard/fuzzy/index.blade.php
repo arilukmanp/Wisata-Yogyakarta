@@ -36,18 +36,18 @@
 						<tbody>
 							<tr>
 								<td rowspan="3" style="vertical-align : middle">1</td>
-								<td rowspan="3" style="vertical-align : middle">Popularitas</td>
-								<td>Cukup Terkenal</td>
+								<td rowspan="3" style="vertical-align : middle">{{$popularity1->criteria}}</td>
+								<td>{{$popularity1->name_set}}</td>
 								<td>{{$popularity1->min_set}}</td>
 								<td>{{$popularity1->max_set}}</td>
 							</tr>
 							<tr>
-								<td>Terkenal</td>
+								<td>{{$popularity2->name_set}}</td>
 								<td>{{$popularity2->min_set}}</td>
 								<td>{{$popularity2->max_set}}</td>
 							</tr>
 							<tr>
-								<td>Sangat Terkenal</td>
+								<td>{{$popularity3->name_set}}</td>
 								<td>{{$popularity3->min_set}}</td>
 								<td>{{$popularity3->max_set}}</td>
 							</tr>
@@ -55,18 +55,18 @@
 
 							<tr>
 								<td rowspan="3" style="vertical-align : middle">2</td>
-								<td rowspan="3" style="vertical-align : middle">Biaya Masuk</td>
-								<td>Sangat Murah</td>
+								<td rowspan="3" style="vertical-align : middle">{{$cost1->criteria}}</td>
+								<td>{{$cost1->name_set}}</td>
 								<td>{{$cost1->min_set}}</td>
 								<td>{{$cost1->max_set}}</td>
 							</tr>
 							<tr>
-								<td>Murah</td>
+								<td>{{$cost2->name_set}}</td>
 								<td>{{$cost2->min_set}}</td>
 								<td>{{$cost2->max_set}}</td>
 							</tr>
 							<tr>
-								<td>Sedang</td>
+								<td>{{$cost3->name_set}}</td>
 								<td>{{$cost3->min_set}}</td>
 								<td>{{$cost3->max_set}}</td>
 							</tr>
@@ -74,18 +74,18 @@
 
 							<tr>
 								<td rowspan="3" style="vertical-align : middle">3</td>
-								<td rowspan="3" style="vertical-align : middle">Pengunjung</td>
-								<td>Sepi</td>
+								<td rowspan="3" style="vertical-align : middle">{{$visitor1->criteria}}</td>
+								<td>{{$visitor1->name_set}}</td>
 								<td>{{$visitor1->min_set}}</td>
 								<td>{{$visitor1->max_set}}</td>
 							</tr>
 							<tr>
-								<td>Cukup Ramai</td>
+								<td>{{$visitor2->name_set}}</td>
 								<td>{{$visitor2->min_set}}</td>
 								<td>{{$visitor2->max_set}}</td>
 							</tr>
 							<tr>
-								<td>Ramai</td>
+								<td>{{$visitor3->name_set}}</td>
 								<td>{{$visitor3->min_set}}</td>
 								<td>{{$visitor3->max_set}}</td>
 							</tr>
@@ -93,18 +93,18 @@
 
 							<tr>
 								<td rowspan="3" style="vertical-align : middle">4</td>
-								<td rowspan="3" style="vertical-align : middle">Fasilitas</td>
-								<td>Cukup Lengkap</td>
+								<td rowspan="3" style="vertical-align : middle">{{$facility1->criteria}}</td>
+								<td>{{$facility1->name_set}}</td>
 								<td>{{$facility1->min_set}}</td>
 								<td>{{$facility1->max_set}}</td>
 							</tr>
 							<tr>
-								<td>Lengkap</td>
+								<td>{{$facility2->name_set}}</td>
 								<td>{{$facility2->min_set}}</td>
 								<td>{{$facility2->max_set}}</td>
 							</tr>
 							<tr>
-								<td>Sangat Lengkap</td>
+								<td>{{$facility3->name_set}}</td>
 								<td>{{$facility3->min_set}}</td>
 								<td>{{$facility3->max_set}}</td>
 							</tr>
@@ -112,18 +112,18 @@
 
 							<tr>
 								<td rowspan="3" style="vertical-align : middle">5</td>
-								<td rowspan="3" style="vertical-align : middle">Kebersihan</td>
-								<td>Cukup Bersih</td>
+								<td rowspan="3" style="vertical-align : middle">{{$cleanliness1->criteria}}</td>
+								<td>{{$cleanliness1->name_set}}</td>
 								<td>{{$cleanliness1->min_set}}</td>
 								<td>{{$cleanliness1->max_set}}</td>
 							</tr>
 							<tr>
-								<td>Bersih</td>
+								<td>{{$cleanliness2->name_set}}</td>
 								<td>{{$cleanliness2->min_set}}</td>
 								<td>{{$cleanliness2->max_set}}</td>
 							</tr>
 							<tr>
-								<td>Sangat Bersih</td>
+								<td>{{$cleanliness3->name_set}}</td>
 								<td>{{$cleanliness3->min_set}}</td>
 								<td>{{$cleanliness3->max_set}}</td>
 							</tr>
@@ -131,18 +131,18 @@
 
 							<tr>
 								<td rowspan="3" style="vertical-align : middle">6</td>
-								<td rowspan="3" style="vertical-align : middle">Akses</td>
-								<td>Cukup Mudah</td>
+								<td rowspan="3" style="vertical-align : middle">{{$accessibility1->criteria}}</td>
+								<td>{{$accessibility1->name_set}}</td>
 								<td>{{$accessibility1->min_set}}</td>
 								<td>{{$accessibility1->max_set}}</td>
 							</tr>
 							<tr>
-								<td>Mudah</td>
+								<td>{{$accessibility2->name_set}}</td>
 								<td>{{$accessibility2->min_set}}</td>
 								<td>{{$accessibility2->max_set}}</td>
 							</tr>
 							<tr>
-								<td>Sangat Mudah</td>
+								<td>{{$accessibility3->name_set}}</td>
 								<td>{{$accessibility3->min_set}}</td>
 								<td>{{$accessibility3->max_set}}</td>
 							</tr>
