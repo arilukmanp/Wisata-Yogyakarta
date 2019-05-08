@@ -70,11 +70,9 @@ Route::group(['middleware' => 'admin'], function () {
 
     Route::group(['prefix' => 'reference/fuzzy'], function () {
         Route::post('/', 'FuzzyController@store');
+        Route::put('/', 'FuzzyController@update');
         Route::get('/', 'FuzzyController@index');
-        Route::get('/create', 'FuzzyController@create');
-        Route::put('/{id}', 'FuzzyController@update');
-        Route::delete('/{id}', 'FuzzyController@destroy');
-        Route::get('/{id}/edit', 'FuzzyController@edit');
+        Route::get('/edit', 'FuzzyController@edit');
     });
 
     Route::group(['prefix' => 'reference/category'], function () {

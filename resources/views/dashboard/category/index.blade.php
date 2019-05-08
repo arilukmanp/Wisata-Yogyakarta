@@ -13,7 +13,7 @@
             <div class="col-md-12">
                 <div class="block-header bttl">
                     <h3>Kategori Destinasi Wisata</h3>
-                    <a href="/reference/category/create" class="btn btn_green btn-md pull-right"><i class="fas fa-plus btn-xs"></i> Tambah Data</a>
+                    <a href="/{{Request::path()}}/create" class="btn btn_green btn-md pull-right"><i class="fas fa-plus btn-xs"></i> Tambah Data</a>
                 </div>
             </div>
         </div>
