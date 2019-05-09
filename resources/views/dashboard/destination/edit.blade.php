@@ -84,13 +84,13 @@
 				<div class="col-md-4">
 					<div class="form-group">
 						<label for="popularity">Popularitas Tempat</label>
-						<input type="number" class="form-control" id="popularity" name="popularity" value="{{ $destination->popularity }}" required autocomplete="off">
+						<input type="number" step="0.1" class="form-control" id="popularity" name="popularity" value="{{ $destination->popularity }}" required autocomplete="off">
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="form-group">
 						<label for="cost">Harga Tiket</label>
-						<input type="number" class="form-control" id="cost" name="cost" value="{{ $destination->cost }}" required autocomplete="off">
+						<input type="number" step="0.1" class="form-control" id="cost" name="cost" value="{{ $destination->cost }}" required autocomplete="off">
 					</div>
 				</div>
 				<div class="col-md-4">
@@ -102,25 +102,25 @@
 				<div class="col-md-4">
 					<div class="form-group">
 						<label for="visitor">Rata-Rata Pengunjung Perhari</label>
-						<input type="number" class="form-control" id="visitor" name="visitor" value="{{ $destination->visitor }}" required autocomplete="off">
+						<input type="number" step="0.1" class="form-control" id="visitor" name="visitor" value="{{ $destination->visitor }}" required autocomplete="off">
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="form-group">
 						<label for="facilities">Fasilitas</label>
-						<input type="number" class="form-control" id="facilities" name="facilities" value="{{ $destination->facilities }}" required autocomplete="off">
+						<input type="number" step="0.1" class="form-control" id="facilities" name="facilities" value="{{ $destination->facilities }}" required autocomplete="off">
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="form-group">
 						<label for="cleanliness">Kebersihan</label>
-						<input type="number" class="form-control" id="cleanliness" name="cleanliness" value="{{ $destination->cleanliness }}" required autocomplete="off">
+						<input type="number" step="0.1" class="form-control" id="cleanliness" name="cleanliness" value="{{ $destination->cleanliness }}" required autocomplete="off">
 					</div>
 				</div>
 				<div class="col-md-4">
 						<div class="form-group" style="border-bottom: none">
 						<label for="accessibility">Kemudahan Akses Tempat</label>
-						<input type="number" class="form-control" id="accessibility" name="accessibility" value="{{ $destination->accessibility }}" required autocomplete="off">
+						<input type="number" step="0.1" class="form-control" id="accessibility" name="accessibility" value="{{ $destination->accessibility }}" required autocomplete="off">
 					</div>
 				</div>
 				<div class="col-md-8">

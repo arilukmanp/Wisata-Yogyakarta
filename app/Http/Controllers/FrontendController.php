@@ -58,7 +58,7 @@ class FrontendController extends Controller
 
 
 
-        // =================================== PERHITUNGAN PRIORITAS ========================================
+        // =================================== PERHITUNGAN POPULARITAS ========================================
 
         // Ambil nilai popularitas dari masing-masing destinasi
         foreach($idCategorySelected as $colection) {
@@ -113,7 +113,7 @@ class FrontendController extends Controller
             }
         }
         
-        // =================================== AKHIR PERHITUNGAN PRIORITAS ========================================
+        // =================================== AKHIR PERHITUNGAN POPULARITAS ========================================
 
 
 
